@@ -1,0 +1,9 @@
+N = 100;
+PulseWidth = 10;
+t = [0:1:(N-1)];
+x = [ones(1,PulseWidth), zeros(1,N-PulseWidth)];
+z = conv(x,x);
+Xw = fft(z);
+f = [-(N/2):1:(N/2)-1]*(1/N);
+w = 2*pi*f;
+Zw = (Xw).*(Xw);

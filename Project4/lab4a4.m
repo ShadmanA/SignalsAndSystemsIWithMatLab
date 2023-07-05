@@ -1,0 +1,18 @@
+N = 100;
+PulseWidth = 10;
+x = [ones(1,PulseWidth), zeros(1,N-PulseWidth)];
+z = conv(x,x);
+figure(3);
+subplot(2, 1, 1);
+plot(t2, z);
+xlabel('t');
+ylabel('z(t)');
+title('Figure 4: Time Domain');
+grid on;
+z_ift = ifft (Zf);
+subplot(2, 1, 2);
+plot(t2, z_ift);
+xlabel('t');
+ylabel('z(t)');
+title('Figure 5: Frequency Domain');
+grid on;
